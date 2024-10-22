@@ -38,7 +38,29 @@ function App() {
     setPokemonIndex(pokemonIndex - 1);
   };
 
-  return (
+  if (pokemonIndex === 0) {
+    return (
+      <section>
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+      <button type="button" onClick={next}>
+        Suivant
+      </button>
+    </section>
+    )
+  }
+
+  else if (pokemonIndex === pokemonList.length - 1) {
+    return (
+      <section>
+      <button type="button" onClick={previous}>
+        Précédent
+      </button>
+      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
+    </section>
+    )
+  }
+
+  else return (
     <section>
       <button type="button" onClick={previous}>
         Précédent
