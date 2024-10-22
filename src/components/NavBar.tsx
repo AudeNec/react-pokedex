@@ -4,16 +4,11 @@ interface Pokemon {
 }
 
 interface NavBarProps {
-  pokemonIndex: number;
   setPokemonIndex: (index: number) => void;
   pokemonList: Pokemon[];
 }
 
-// interface changePokemonProps {
-//   i: number;
-// }
-
-function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
+function NavBar({ setPokemonIndex, pokemonList }: NavBarProps) {
   return (
     <nav>
       {pokemonList.map((pokemon, index) => (
