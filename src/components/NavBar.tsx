@@ -11,10 +11,13 @@ interface NavBarProps {
 
 function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
   const next = () => {
-    setPokemonIndex(pokemonIndex + 1);
+    if (pokemonIndex < pokemonList.length - 1)
+      setPokemonIndex(pokemonIndex + 1);
+    else alert("Plus de Pokemon :(");
   };
   const previous = () => {
-    setPokemonIndex(pokemonIndex - 1);
+    if (pokemonIndex > 0) setPokemonIndex(pokemonIndex - 1);
+    else alert("Plus de Pokemon :(");
   };
 
   return (
