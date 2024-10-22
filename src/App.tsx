@@ -40,13 +40,7 @@ function App() {
 
   return (
     <section>
-      <button type="button" onClick={previous}>
-        Précédent
-      </button>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <button type="button" onClick={next}>
-        Suivant
-      </button>
+      <PokemonCard name={pokemonList[0].name} imgSrc={pokemonList[0].imgSrc} />
     </section>
   );
 }
