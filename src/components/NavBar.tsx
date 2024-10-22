@@ -20,7 +20,27 @@ function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
     else alert("Plus de Pokemon :(");
   };
 
-  return (
+  if (pokemonIndex === 0) {
+    return (
+      <section>
+        <button type="button" onClick={next}>
+          Next
+        </button>
+      </section>
+    );
+  }
+
+  else if (pokemonIndex === pokemonList.length - 1) {
+    return (
+      <section>
+        <button type="button" onClick={previous}>
+          Previous
+        </button>
+      </section>
+    );
+  }
+
+  else return (
     <section>
       <button type="button" onClick={previous}>
         Previous
